@@ -1,0 +1,29 @@
+.title-container {
+  background-image: url(https://images.squarespace-cdn.com/content/v1/5c69df27ca525b3b56a5cce6/1553776779529-IF27XV130PBNE5RZU3F9/JackBrauer-WanakaSunrise.jpg?format=1000w),
+    linear-gradient(rgba(0, 0, 0, 1.6), rgba(0, 0, 0, 0.3));
+  background-size: auto;
+  color: white !important;
+  text-align: center;
+  margin: -3.5% -3.5% 3.5% -3.5%;
+  padding: 10%;
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  /* background-color: rgb(72, 67, 126); */
+  /* border-radius: 13px; */
+  /* width: 100%; */
+  /* height: 100%; */
+  /* background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)); */
+}
+
+h1 {
+  font-size: 220%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 160%;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bolder;
+}
