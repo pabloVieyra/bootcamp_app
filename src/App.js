@@ -1,12 +1,31 @@
+import { useState } from "react";
 import TitleCard from "./components/TitleCard";
 import Navbar from "./components/Navbar";
 import MuiCard from "./components/MuiCard";
 import Footer from "./components/Footer";
-import StandardImageList from "./components/StandardImageList";
+// import StandardImageList from "./components/StandardImageList";
 
 import "./App.css";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const sigImg = (count) => {
+    setCount(count + 1);
+    if (count > 2) {
+      setCount(0);
+    }
+    console.log(count);
+  };
+
+  const posImg = (count) => {
+    setCount(count - 1);
+    if (count < 1) {
+      setCount(2);
+    }
+    console.log(count);
+  };
+
   return (
     <div>
       <Navbar></Navbar>
@@ -116,12 +135,46 @@ function App() {
                 color pálido.
               </p>
             </div>
-            <div className="IC-Img">
+            <div>
               {/* Clase con manejo de la imagen para que quede bien*/}
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/01-Lilium_candidum-Madonna_lily.JPG/220px-01-Lilium_candidum-Madonna_lily.JPG"
-                alt="Lilium candidum madonna lily"
-              ></img>
+
+              {count === 0 ? (
+                <img
+                  className="IC-Img"
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/01-Lilium_candidum-Madonna_lily.JPG/220px-01-Lilium_candidum-Madonna_lily.JPG"
+                  alt="Lilium candidum madonna lily"
+                ></img>
+              ) : count === 1 ? (
+                <img
+                  className="IC-Img"
+                  src="https://live.staticflickr.com/5119/5800753294_d6c85bdc1f_b.jpg"
+                  alt="Lilium candidum Roja"
+                ></img>
+              ) : (
+                <img
+                  className="IC-Img"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1Q70crn4-KUHQYE5vQHcgXQ_1Cz7t5PMErg&usqp=CAU"
+                  alt="Lilium candidum conjunto"
+                ></img>
+              )}
+
+              {/* Aca hay un boton para cambiar de imagen :D */}
+              <section style={{ display: "flex" }}>
+                <button
+                  type="button"
+                  style={{ margin: "10px" }}
+                  onClick={() => sigImg(count)}
+                >
+                  Siguiente Imagen
+                </button>
+                <button
+                  type="button"
+                  style={{ margin: "10px" }}
+                  onClick={() => posImg(count)}
+                >
+                  Anterior Imagen
+                </button>
+              </section>
             </div>
           </div>
         </article>
